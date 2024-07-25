@@ -1,0 +1,11 @@
+{
+  "name": "bytelength-benchmarks",
+  "author": "Jamie Kyle",
+  "license": "MIT",
+  "scripts": {
+    "test": "bencher ./benchmarks/*.js"
+  },
+  "dependencies": {
+    "@indutny/bencher": "^1.2.0"
+  }
+}
