@@ -5,6 +5,7 @@
 - `new Blob([input]).size`
 - `Buffer.byteLength(input)`
 - `new TextEncoder().encode(input).byteLength`
+- [JavaScript implementation](./implementation.js)
 
 # `"Hello, World!"`
 
@@ -12,9 +13,10 @@
 npm test
 ```
 ```txt
-./benchmarks/blob.js:        189’870.1 ops/sec (±13’053.9, p=0.001, o=1/100)
-./benchmarks/buffer.js:      55’378’294.8 ops/sec (±334’664.2, p=0.001, o=6/100) severe outliers=3
-./benchmarks/textencoder.js: 2’742’465.9 ops/sec (±242’838.5, p=0.001, o=1/100)
+./benchmarks/blob.js:           202’345.0 ops/sec (±13’993.9, p=0.001, o=0/100)
+./benchmarks/buffer.js:         57’434’701.2 ops/sec (±425’763.3, p=0.001, o=9/100) severe outliers=5
+./benchmarks/implementation.js: 48’441’909.6 ops/sec (±397’249.6, p=0.001, o=5/100) severe outliers=2
+./benchmarks/textencoder.js:    2’667’052.4 ops/sec (±564’727.5, p=0.001, o=6/100) severe outliers=2
 ```
 
 # `"a".repeat(2 ** 29 - 24)`
@@ -23,7 +25,8 @@ npm test
 INPUT=max npm test -- --samples 10
 ```
 ```txt
-./benchmarks/blob.js:        4.4 ops/sec (±1.2, p=0.001, o=0/10)
-./benchmarks/buffer.js:      53.8 ops/sec (±0.9, p=0.001, o=0/10)
-./benchmarks/textencoder.js: 12.8 ops/sec (±0.2, p=0.001, o=0/10)
+./benchmarks/blob.js:           4.8 ops/sec (±0.1, p=0.001, o=0/10)
+./benchmarks/buffer.js:         54.5 ops/sec (±3.0, p=0.001, o=0/10)
+./benchmarks/implementation.js: 0.7 ops/sec (±0.0, p=0.001, o=0/10)
+./benchmarks/textencoder.js:    11.9 ops/sec (±1.0, p=0.001, o=0/10)
 ```
