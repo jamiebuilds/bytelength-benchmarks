@@ -1,4 +1,6 @@
-const implementation = require('./implementation')
+"use strict"
+let implementation = require("./implementation")
+let emojis = require("./emojis")()
 
 function testString(input) {
   let a = implementation(input)
@@ -19,12 +21,13 @@ function testCodePoint(i) {
   }
 }
 
-testString('a')
-testString('ab')
-testString('¢')
-testString('¢')
-testString('👩')
-testString('👩🏾‍🌾')
+testString("a")
+testString("ab")
+testString("¢")
+testString("¢")
+testString("👩")
+testString("👩🏾‍🌾")
+testString(emojis)
 
 // Brute force test
 for (let i = 0; i < 0x10ffff; i++) {
